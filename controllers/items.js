@@ -1,8 +1,8 @@
-const Item = require("../models/item.js");
+const Item = require("../models/items.js");
 
 // GET
 const getItems = (req, res) => {
-  Item.find({})
+  Item.findAll({})
     .then((result) => res.status(200).json({ result }))
     .catch((error) => res.status(500).json({ msg: error }));
 };

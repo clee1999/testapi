@@ -1,8 +1,8 @@
-const User = require("../models/User.js");
+const User = require("../models/Users.js");
 
 // GET
 const getUsers = (req, res) => {
-  User.find({})
+  User.findAll({})
     .then((result) => res.status(200).json({ result }))
     .catch((error) => res.status(500).json({ msg: error }));
 };
