@@ -14,8 +14,13 @@ const getWishlist = (req, res) => {
 
 // POST
 const createWishlist = (req, res) => {
-  Wishlist.create(req.body)
-    .then((result) => res.status(200).json({ result }))
+  response = new Wishlist({
+    name: req.body.name,
+    items: req.body.items,
+  });
+  response
+    .save()
+    .then((result) => res.status(201).json({ result }))
     .catch((error) => res.status(500).json({ msg: error }));
 };
 
