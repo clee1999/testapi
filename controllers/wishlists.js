@@ -1,4 +1,4 @@
-const Wishlist = require("../models/Wishlists.js");
+const Wishlist = require("../models/wishlists.js");
 // GET
 const getWishlists = (req, res) => {
   Wishlist.findAll({})
