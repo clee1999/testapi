@@ -1,51 +1,40 @@
-const users = require("../data.js");
+const User = require("../models/User.js");
 
 // GET
 const getUsers = (req, res) => {
-  res.json(users);
+  User.find({})
+    .then((result) => res.status(200).json({ result }))
+    .catch((error) => res.status(500).json({ msg: error }));
 };
 
 const getUser = (req, res) => {
-  const id = Number(req.params.userID);
-  const user = users.find((user) => user.id === id);
-
-  if (!user) {
-    return res.status(404).send("user not found");
-  }
-  res.json(user);
+  User.findOne({ _id: req.params.userID })
+    .then((result) => res.status(200).json({ result }))
+    .catch(() => res.status(404).json({ msg: "user not found" }));
 };
 
 // POST
 const createUser = (req, res) => {
-  const newUser = {
-    id: users.length + 1,
-    name: req.body.name,
-    price: req.body.price,
-  };
-  users.push(newUser);
-  res.status(201).json(newUser);
+  User.create(req.body)
+    .then((result) => res.status(200).json({ result }))
+    .catch((error) => res.status(500).json({ msg: error }));
 };
 
 // PUT
 const updateUser = (req, res) => {
-  const id = Number(req.params.userID);
-  const index = users.findIndex((user) => user.id === id);
-  const updatedUser = {
-    id: users[index].id,
-    name: req.body.name,
-    price: req.body.price,
-  };
-
-  users[index] = updatedUser;
-  res.status(200).json("user updated");
+  User.findOneAndUpdate({ _id: req.params.userID }, req.body, {
+    new: true,
+    runValidators: true,
+  })
+    .then((result) => res.status(200).json({ result }))
+    .catch((error) => res.status(404).json({ msg: "user not found" }));
 };
 
 // DELETE
 const deleteUser = (req, res) => {
-  const id = Number(req.params.userID);
-  const index = users.findIndex((user) => user.id === id);
-  users.splice(index, 1);
-  res.status(200).json("user deleted");
+  User.findOneAndDelete({ _id: req.params.userID })
+    .then((result) => res.status(200).json({ result }))
+    .catch((error) => res.status(404).json({ msg: "user not found" }));
 };
 
 module.exports = {

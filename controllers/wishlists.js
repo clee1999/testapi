@@ -1,51 +1,39 @@
-const wishlists = require("../data.js");
-
+const Wishlist = require("../models/Wishlist.js");
 // GET
 const getWishlists = (req, res) => {
-  res.json(wishlists);
+  Wishlist.find({})
+    .then((result) => res.status(200).json({ result }))
+    .catch((error) => res.status(500).json({ msg: error }));
 };
 
 const getWishlist = (req, res) => {
-  const id = Number(req.params.wishlistID);
-  const wishlist = wishlists.find((wishlist) => wishlist.id === id);
-
-  if (!wishlist) {
-    return res.status(404).send("wishlist not found");
-  }
-  res.json(wishlist);
+  Wishlist.findOne({ _id: req.params.wishlistID })
+    .then((result) => res.status(200).json({ result }))
+    .catch(() => res.status(404).json({ msg: "wishlist not found" }));
 };
 
 // POST
 const createWishlist = (req, res) => {
-  const newWishlist = {
-    id: wishlists.length + 1,
-    name: req.body.name,
-    price: req.body.price,
-  };
-  wishlists.push(newWishlist);
-  res.status(201).json(newWishlist);
+  Wishlist.create(req.body)
+    .then((result) => res.status(200).json({ result }))
+    .catch((error) => res.status(500).json({ msg: error }));
 };
 
 // PUT
 const updateWishlist = (req, res) => {
-  const id = Number(req.params.wishlistID);
-  const index = wishlists.findIndex((wishlist) => wishlist.id === id);
-  const updatedWishlist = {
-    id: wishlists[index].id,
-    name: req.body.name,
-    price: req.body.price,
-  };
-
-  wishlists[index] = updatedWishlist;
-  res.status(200).json("wishlist updated");
+  Wishlist.findOneAndUpdate({ _id: req.params.wishlistID }, req.body, {
+    new: true,
+    runValidators: true,
+  })
+    .then((result) => res.status(200).json({ result }))
+    .catch((error) => res.status(404).json({ msg: "wishlist not found" }));
 };
 
 // DELETE
 const deleteWishlist = (req, res) => {
-  const id = Number(req.params.wishlistID);
-  const index = wishlists.findIndex((wishlist) => wishlist.id === id);
-  wishlists.splice(index, 1);
-  res.status(200).json("wishlist deleted");
+  Wishlist.findOneAndDelete({ _id: req.params.wishlistID })
+    .then((result) => res.status(200).json({ result }))
+    .catch((error) => res.status(404).json({ msg: "wishlist not found" }));
 };
 
 module.exports = {
