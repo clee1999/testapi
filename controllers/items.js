@@ -14,7 +14,7 @@ const getItem = (req, res) => {
 };
 
 // POST
-const createItem = async (req, res) => {
+const createItem = (req, res) => {
   response = new Item({
     name: req.body.name,
     price: req.body.price,
