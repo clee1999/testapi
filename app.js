@@ -61,5 +61,3 @@ app.use(logger); // execute your middleware for all requests
 app.get("/about", (req, res) => {
   return res.send("About Page");
 });
-
-module.exports = { app };
