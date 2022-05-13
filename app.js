@@ -40,7 +40,6 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-
 ////// ENTITY
 app.use("/api/items", items_routes);
 app.use("/api/users", users_routes);
@@ -62,5 +61,3 @@ app.use(logger); // execute your middleware for all requests
 app.get("/about", (req, res) => {
   return res.send("About Page");
 });
-
-module.exports = { app };

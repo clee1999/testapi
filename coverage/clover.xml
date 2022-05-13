@@ -1,328 +1,326 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1652455356726" clover="3.2.0">
-  <project timestamp="1652455356726" name="All files">
-    <metrics statements="239" coveredstatements="177" conditionals="16" coveredconditionals="6" methods="60" coveredmethods="11" elements="315" coveredelements="194" complexity="0" loc="239" ncloc="239" packages="8" files="20" classes="20"/>
+<coverage generated="1652456654054" clover="3.2.0">
+  <project timestamp="1652456654054" name="All files">
+    <metrics statements="237" coveredstatements="170" conditionals="16" coveredconditionals="3" methods="60" coveredmethods="25" elements="313" coveredelements="198" complexity="0" loc="237" ncloc="237" packages="8" files="20" classes="20"/>
     <package name="projettestfonctionnel">
-      <metrics statements="32" coveredstatements="28" conditionals="4" coveredconditionals="2" methods="4" coveredmethods="1"/>
+      <metrics statements="31" coveredstatements="28" conditionals="4" coveredconditionals="2" methods="4" coveredmethods="2"/>
       <file name="app.js" path="/Users/moussia/Desktop/esgi/2em année/2em semestre/projettestfonctionnel/app.js">
-        <metrics statements="32" coveredstatements="28" conditionals="4" coveredconditionals="2" methods="4" coveredmethods="1"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="2" count="1" type="stmt"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="4" count="1" type="stmt"/>
-        <line num="5" count="1" type="stmt"/>
-        <line num="6" count="1" type="stmt"/>
-        <line num="7" count="1" type="stmt"/>
-        <line num="8" count="1" type="stmt"/>
-        <line num="9" count="1" type="stmt"/>
-        <line num="10" count="1" type="stmt"/>
-        <line num="11" count="1" type="stmt"/>
-        <line num="13" count="1" type="stmt"/>
-        <line num="14" count="1" type="stmt"/>
-        <line num="16" count="1" type="cond" truecount="1" falsecount="1"/>
-        <line num="17" count="1" type="cond" truecount="1" falsecount="1"/>
+        <metrics statements="31" coveredstatements="28" conditionals="4" coveredconditionals="2" methods="4" coveredmethods="2"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="2" count="3" type="stmt"/>
+        <line num="3" count="3" type="stmt"/>
+        <line num="4" count="3" type="stmt"/>
+        <line num="5" count="3" type="stmt"/>
+        <line num="6" count="3" type="stmt"/>
+        <line num="7" count="3" type="stmt"/>
+        <line num="8" count="3" type="stmt"/>
+        <line num="9" count="3" type="stmt"/>
+        <line num="10" count="3" type="stmt"/>
+        <line num="11" count="3" type="stmt"/>
+        <line num="13" count="3" type="stmt"/>
+        <line num="14" count="3" type="stmt"/>
+        <line num="16" count="3" type="cond" truecount="1" falsecount="1"/>
+        <line num="17" count="3" type="cond" truecount="1" falsecount="1"/>
         <line num="18" count="0" type="stmt"/>
         <line num="19" count="0" type="stmt"/>
-        <line num="24" count="1" type="stmt"/>
-        <line num="27" count="1" type="stmt"/>
-        <line num="40" count="1" type="stmt"/>
-        <line num="41" count="1" type="stmt"/>
-        <line num="45" count="1" type="stmt"/>
-        <line num="46" count="1" type="stmt"/>
-        <line num="47" count="1" type="stmt"/>
-        <line num="48" count="1" type="stmt"/>
-        <line num="50" count="1" type="stmt"/>
-        <line num="52" count="1" type="stmt"/>
-        <line num="57" count="0" type="stmt"/>
-        <line num="60" count="1" type="stmt"/>
-        <line num="62" count="1" type="stmt"/>
-        <line num="63" count="0" type="stmt"/>
-        <line num="66" count="1" type="stmt"/>
+        <line num="24" count="3" type="stmt"/>
+        <line num="27" count="3" type="stmt"/>
+        <line num="40" count="3" type="stmt"/>
+        <line num="41" count="3" type="stmt"/>
+        <line num="44" count="3" type="stmt"/>
+        <line num="45" count="3" type="stmt"/>
+        <line num="46" count="3" type="stmt"/>
+        <line num="47" count="3" type="stmt"/>
+        <line num="49" count="3" type="stmt"/>
+        <line num="51" count="3" type="stmt"/>
+        <line num="56" count="3" type="stmt"/>
+        <line num="59" count="3" type="stmt"/>
+        <line num="61" count="3" type="stmt"/>
+        <line num="62" count="0" type="stmt"/>
       </file>
     </package>
     <package name="projettestfonctionnel.conf">
-      <metrics statements="25" coveredstatements="21" conditionals="2" coveredconditionals="1" methods="8" coveredmethods="4"/>
+      <metrics statements="25" coveredstatements="20" conditionals="2" coveredconditionals="1" methods="8" coveredmethods="3"/>
       <file name="database.js" path="/Users/moussia/Desktop/esgi/2em année/2em semestre/projettestfonctionnel/conf/database.js">
         <metrics statements="13" coveredstatements="11" conditionals="2" coveredconditionals="1" methods="5" coveredmethods="2"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="4" count="1" type="stmt"/>
-        <line num="6" count="1" type="stmt"/>
-        <line num="7" count="1" type="stmt"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="4" count="3" type="stmt"/>
+        <line num="6" count="3" type="stmt"/>
+        <line num="7" count="3" type="stmt"/>
         <line num="8" count="0" type="stmt"/>
-        <line num="10" count="1" type="stmt"/>
-        <line num="11" count="1" type="stmt"/>
-        <line num="13" count="1" type="stmt"/>
+        <line num="10" count="3" type="stmt"/>
+        <line num="11" count="3" type="stmt"/>
+        <line num="13" count="3" type="stmt"/>
         <line num="14" count="0" type="stmt"/>
-        <line num="16" count="1" type="stmt"/>
-        <line num="17" count="1" type="cond" truecount="1" falsecount="1"/>
-        <line num="18" count="1" type="stmt"/>
-        <line num="22" count="1" type="stmt"/>
+        <line num="16" count="3" type="stmt"/>
+        <line num="17" count="3" type="cond" truecount="1" falsecount="1"/>
+        <line num="18" count="3" type="stmt"/>
+        <line num="22" count="3" type="stmt"/>
       </file>
       <file name="passport.js" path="/Users/moussia/Desktop/esgi/2em année/2em semestre/projettestfonctionnel/conf/passport.js">
-        <metrics statements="12" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="2"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="2" count="1" type="stmt"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="5" count="1" type="stmt"/>
-        <line num="7" count="1" type="stmt"/>
-        <line num="13" count="1" type="stmt"/>
-        <line num="16" count="1" type="stmt"/>
-        <line num="17" count="2" type="stmt"/>
-        <line num="21" count="1" type="stmt"/>
+        <metrics statements="12" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="1"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="2" count="3" type="stmt"/>
+        <line num="3" count="3" type="stmt"/>
+        <line num="5" count="3" type="stmt"/>
+        <line num="7" count="3" type="stmt"/>
+        <line num="13" count="3" type="stmt"/>
+        <line num="16" count="3" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="21" count="3" type="stmt"/>
         <line num="22" count="0" type="stmt"/>
         <line num="23" count="0" type="stmt"/>
-        <line num="27" count="1" type="stmt"/>
+        <line num="27" count="3" type="stmt"/>
       </file>
     </package>
     <package name="projettestfonctionnel.constants">
       <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="Roles.js" path="/Users/moussia/Desktop/esgi/2em année/2em semestre/projettestfonctionnel/constants/Roles.js">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="6" count="1" type="stmt"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="6" count="3" type="stmt"/>
       </file>
       <file name="Strings.js" path="/Users/moussia/Desktop/esgi/2em année/2em semestre/projettestfonctionnel/constants/Strings.js">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="13" count="1" type="stmt"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="13" count="3" type="stmt"/>
       </file>
     </package>
     <package name="projettestfonctionnel.controllers">
-      <metrics statements="91" coveredstatements="43" conditionals="6" coveredconditionals="3" methods="41" coveredmethods="2"/>
+      <metrics statements="90" coveredstatements="49" conditionals="6" coveredconditionals="0" methods="41" coveredmethods="20"/>
       <file name="items.js" path="/Users/moussia/Desktop/esgi/2em année/2em semestre/projettestfonctionnel/controllers/items.js">
-        <metrics statements="23" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="15" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="4" count="1" type="stmt"/>
+        <metrics statements="23" coveredstatements="18" conditionals="0" coveredconditionals="0" methods="15" coveredmethods="10"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="4" count="3" type="stmt"/>
         <line num="5" count="0" type="stmt"/>
         <line num="6" count="0" type="stmt"/>
         <line num="7" count="0" type="stmt"/>
-        <line num="10" count="1" type="stmt"/>
-        <line num="11" count="0" type="stmt"/>
-        <line num="12" count="0" type="stmt"/>
-        <line num="13" count="0" type="stmt"/>
-        <line num="17" count="1" type="stmt"/>
-        <line num="18" count="0" type="stmt"/>
-        <line num="22" count="0" type="stmt"/>
-        <line num="25" count="0" type="stmt"/>
+        <line num="10" count="3" type="stmt"/>
+        <line num="11" count="4" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="17" count="3" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
         <line num="27" count="0" type="stmt"/>
-        <line num="31" count="1" type="stmt"/>
-        <line num="32" count="0" type="stmt"/>
-        <line num="37" count="0" type="stmt"/>
+        <line num="31" count="3" type="stmt"/>
+        <line num="32" count="1" type="stmt"/>
+        <line num="37" count="1" type="stmt"/>
         <line num="39" count="0" type="stmt"/>
-        <line num="43" count="1" type="stmt"/>
-        <line num="44" count="0" type="stmt"/>
-        <line num="45" count="0" type="stmt"/>
-        <line num="46" count="0" type="stmt"/>
-        <line num="49" count="1" type="stmt"/>
+        <line num="43" count="3" type="stmt"/>
+        <line num="44" count="3" type="stmt"/>
+        <line num="45" count="2" type="stmt"/>
+        <line num="46" count="1" type="stmt"/>
+        <line num="49" count="3" type="stmt"/>
       </file>
       <file name="login.js" path="/Users/moussia/Desktop/esgi/2em année/2em semestre/projettestfonctionnel/controllers/login.js">
-        <metrics statements="19" coveredstatements="14" conditionals="6" coveredconditionals="3" methods="2" coveredmethods="1"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="2" count="1" type="stmt"/>
-        <line num="4" count="1" type="stmt"/>
-        <line num="5" count="4" type="stmt"/>
-        <line num="6" count="4" type="stmt"/>
-        <line num="7" count="4" type="cond" truecount="2" falsecount="0"/>
-        <line num="8" count="2" type="stmt"/>
-        <line num="9" count="2" type="stmt"/>
-        <line num="11" count="2" type="stmt"/>
-        <line num="12" count="2" type="cond" truecount="1" falsecount="1"/>
+        <metrics statements="19" coveredstatements="5" conditionals="6" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="2" count="3" type="stmt"/>
+        <line num="4" count="3" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="7" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="12" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="13" count="0" type="stmt"/>
-        <line num="15" count="2" type="stmt"/>
-        <line num="16" count="2" type="stmt"/>
-        <line num="19" count="1" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="19" count="3" type="stmt"/>
         <line num="20" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="21" count="0" type="stmt"/>
         <line num="23" count="0" type="stmt"/>
         <line num="24" count="0" type="stmt"/>
-        <line num="27" count="1" type="stmt"/>
+        <line num="27" count="3" type="stmt"/>
       </file>
       <file name="users.js" path="/Users/moussia/Desktop/esgi/2em année/2em semestre/projettestfonctionnel/controllers/users.js">
-        <metrics statements="25" coveredstatements="15" conditionals="0" coveredconditionals="0" methods="9" coveredmethods="1"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="2" count="1" type="stmt"/>
-        <line num="5" count="1" type="stmt"/>
+        <metrics statements="25" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="9" coveredmethods="0"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="2" count="3" type="stmt"/>
+        <line num="5" count="3" type="stmt"/>
         <line num="6" count="0" type="stmt"/>
         <line num="7" count="0" type="stmt"/>
         <line num="8" count="0" type="stmt"/>
-        <line num="11" count="1" type="stmt"/>
-        <line num="13" count="18" type="stmt"/>
-        <line num="14" count="18" type="stmt"/>
-        <line num="15" count="18" type="stmt"/>
-        <line num="16" count="18" type="stmt"/>
-        <line num="23" count="18" type="stmt"/>
-        <line num="24" count="18" type="stmt"/>
-        <line num="25" count="18" type="stmt"/>
+        <line num="11" count="3" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
         <line num="29" count="0" type="stmt"/>
-        <line num="33" count="1" type="stmt"/>
+        <line num="33" count="3" type="stmt"/>
         <line num="34" count="0" type="stmt"/>
-        <line num="37" count="1" type="stmt"/>
+        <line num="37" count="3" type="stmt"/>
         <line num="38" count="0" type="stmt"/>
         <line num="39" count="0" type="stmt"/>
-        <line num="52" count="1" type="stmt"/>
+        <line num="52" count="3" type="stmt"/>
         <line num="53" count="0" type="stmt"/>
         <line num="54" count="0" type="stmt"/>
         <line num="55" count="0" type="stmt"/>
-        <line num="64" count="1" type="stmt"/>
+        <line num="64" count="3" type="stmt"/>
       </file>
       <file name="wishlists.js" path="/Users/moussia/Desktop/esgi/2em année/2em semestre/projettestfonctionnel/controllers/wishlists.js">
-        <metrics statements="24" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="15" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="4" count="0" type="stmt"/>
-        <line num="5" count="0" type="stmt"/>
+        <metrics statements="23" coveredstatements="18" conditionals="0" coveredconditionals="0" methods="15" coveredmethods="10"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="3" count="3" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
         <line num="6" count="0" type="stmt"/>
-        <line num="9" count="1" type="stmt"/>
-        <line num="10" count="0" type="stmt"/>
-        <line num="11" count="0" type="stmt"/>
-        <line num="12" count="0" type="stmt"/>
-        <line num="16" count="1" type="stmt"/>
-        <line num="17" count="0" type="stmt"/>
-        <line num="21" count="0" type="stmt"/>
-        <line num="24" count="0" type="stmt"/>
-        <line num="25" count="0" type="stmt"/>
-        <line num="27" count="0" type="stmt"/>
-        <line num="31" count="1" type="stmt"/>
-        <line num="32" count="0" type="stmt"/>
-        <line num="36" count="0" type="stmt"/>
+        <line num="9" count="3" type="stmt"/>
+        <line num="10" count="3" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="16" count="3" type="stmt"/>
+        <line num="17" count="3" type="stmt"/>
+        <line num="21" count="3" type="stmt"/>
+        <line num="24" count="2" type="stmt"/>
+        <line num="27" count="1" type="stmt"/>
+        <line num="31" count="3" type="stmt"/>
+        <line num="32" count="1" type="stmt"/>
+        <line num="36" count="1" type="stmt"/>
         <line num="37" count="0" type="stmt"/>
-        <line num="41" count="1" type="stmt"/>
+        <line num="41" count="3" type="stmt"/>
         <line num="42" count="0" type="stmt"/>
         <line num="43" count="0" type="stmt"/>
         <line num="44" count="0" type="stmt"/>
-        <line num="47" count="1" type="stmt"/>
+        <line num="47" count="3" type="stmt"/>
       </file>
     </package>
     <package name="projettestfonctionnel.middlewares">
       <metrics statements="9" coveredstatements="5" conditionals="4" coveredconditionals="0" methods="2" coveredmethods="0"/>
       <file name="isAdmin.js" path="/Users/moussia/Desktop/esgi/2em année/2em semestre/projettestfonctionnel/middlewares/isAdmin.js">
         <metrics statements="5" coveredstatements="3" conditionals="2" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="3" count="1" type="stmt"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="3" count="3" type="stmt"/>
         <line num="4" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="5" count="0" type="stmt"/>
-        <line num="8" count="1" type="stmt"/>
+        <line num="8" count="3" type="stmt"/>
       </file>
       <file name="isAuthenticated.js" path="/Users/moussia/Desktop/esgi/2em année/2em semestre/projettestfonctionnel/middlewares/isAuthenticated.js">
         <metrics statements="4" coveredstatements="2" conditionals="2" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
+        <line num="1" count="3" type="stmt"/>
         <line num="2" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="3" count="0" type="stmt"/>
-        <line num="6" count="1" type="stmt"/>
+        <line num="6" count="3" type="stmt"/>
       </file>
     </package>
     <package name="projettestfonctionnel.middlewares.validators">
-      <metrics statements="26" coveredstatements="24" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="3"/>
+      <metrics statements="26" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
       <file name="Login.js" path="/Users/moussia/Desktop/esgi/2em année/2em semestre/projettestfonctionnel/middlewares/validators/Login.js">
-        <metrics statements="13" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="2" count="1" type="stmt"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="5" count="1" type="stmt"/>
-        <line num="20" count="9" type="stmt"/>
-        <line num="21" count="9" type="stmt"/>
-        <line num="22" count="5" type="stmt"/>
-        <line num="24" count="5" type="stmt"/>
-        <line num="28" count="5" type="stmt"/>
-        <line num="30" count="4" type="stmt"/>
-        <line num="35" count="1" type="stmt"/>
-        <line num="36" count="4" type="stmt"/>
-        <line num="42" count="1" type="stmt"/>
+        <metrics statements="13" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="2" count="3" type="stmt"/>
+        <line num="3" count="3" type="stmt"/>
+        <line num="5" count="3" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="35" count="3" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="42" count="3" type="stmt"/>
       </file>
       <file name="SignUp.js" path="/Users/moussia/Desktop/esgi/2em année/2em semestre/projettestfonctionnel/middlewares/validators/SignUp.js">
-        <metrics statements="13" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="2" count="1" type="stmt"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="5" count="1" type="stmt"/>
-        <line num="51" count="18" type="stmt"/>
-        <line num="52" count="18" type="stmt"/>
-        <line num="53" count="18" type="stmt"/>
-        <line num="55" count="18" type="stmt"/>
-        <line num="62" count="18" type="stmt"/>
+        <metrics statements="13" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="2" count="3" type="stmt"/>
+        <line num="3" count="3" type="stmt"/>
+        <line num="5" count="3" type="stmt"/>
+        <line num="51" count="0" type="stmt"/>
+        <line num="52" count="0" type="stmt"/>
+        <line num="53" count="0" type="stmt"/>
+        <line num="55" count="0" type="stmt"/>
+        <line num="62" count="0" type="stmt"/>
         <line num="64" count="0" type="stmt"/>
-        <line num="69" count="1" type="stmt"/>
+        <line num="69" count="3" type="stmt"/>
         <line num="70" count="0" type="stmt"/>
-        <line num="76" count="1" type="stmt"/>
+        <line num="76" count="3" type="stmt"/>
       </file>
     </package>
     <package name="projettestfonctionnel.models">
       <metrics statements="13" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="items.js" path="/Users/moussia/Desktop/esgi/2em année/2em semestre/projettestfonctionnel/models/items.js">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="13" count="1" type="stmt"/>
-        <line num="15" count="1" type="stmt"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="3" count="3" type="stmt"/>
+        <line num="13" count="3" type="stmt"/>
+        <line num="15" count="3" type="stmt"/>
       </file>
       <file name="users.js" path="/Users/moussia/Desktop/esgi/2em année/2em semestre/projettestfonctionnel/models/users.js">
         <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="2" count="1" type="stmt"/>
-        <line num="4" count="1" type="stmt"/>
-        <line num="42" count="1" type="stmt"/>
-        <line num="44" count="1" type="stmt"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="2" count="3" type="stmt"/>
+        <line num="4" count="3" type="stmt"/>
+        <line num="42" count="3" type="stmt"/>
+        <line num="44" count="3" type="stmt"/>
       </file>
       <file name="wishlists.js" path="/Users/moussia/Desktop/esgi/2em année/2em semestre/projettestfonctionnel/models/wishlists.js">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="13" count="1" type="stmt"/>
-        <line num="15" count="1" type="stmt"/>
+        <line num="2" count="3" type="stmt"/>
+        <line num="4" count="3" type="stmt"/>
+        <line num="15" count="3" type="stmt"/>
+        <line num="17" count="3" type="stmt"/>
       </file>
     </package>
     <package name="projettestfonctionnel.routes">
-      <metrics statements="39" coveredstatements="39" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <metrics statements="39" coveredstatements="39" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
       <file name="auth.js" path="/Users/moussia/Desktop/esgi/2em année/2em semestre/projettestfonctionnel/routes/auth.js">
-        <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="2" count="1" type="stmt"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="4" count="1" type="stmt"/>
-        <line num="6" count="1" type="stmt"/>
-        <line num="9" count="2" type="stmt"/>
-        <line num="10" count="1" type="stmt"/>
-        <line num="13" count="1" type="stmt"/>
+        <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="2" count="3" type="stmt"/>
+        <line num="3" count="3" type="stmt"/>
+        <line num="4" count="3" type="stmt"/>
+        <line num="6" count="3" type="stmt"/>
+        <line num="9" count="3" type="stmt"/>
+        <line num="10" count="3" type="stmt"/>
+        <line num="13" count="3" type="stmt"/>
       </file>
       <file name="items.js" path="/Users/moussia/Desktop/esgi/2em année/2em semestre/projettestfonctionnel/routes/items.js">
         <metrics statements="10" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="2" count="1" type="stmt"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="11" count="1" type="stmt"/>
-        <line num="13" count="1" type="stmt"/>
-        <line num="15" count="1" type="stmt"/>
-        <line num="17" count="1" type="stmt"/>
-        <line num="19" count="1" type="stmt"/>
-        <line num="21" count="1" type="stmt"/>
-        <line num="23" count="1" type="stmt"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="2" count="3" type="stmt"/>
+        <line num="3" count="3" type="stmt"/>
+        <line num="11" count="3" type="stmt"/>
+        <line num="13" count="3" type="stmt"/>
+        <line num="15" count="3" type="stmt"/>
+        <line num="17" count="3" type="stmt"/>
+        <line num="19" count="3" type="stmt"/>
+        <line num="21" count="3" type="stmt"/>
+        <line num="23" count="3" type="stmt"/>
       </file>
       <file name="users.js" path="/Users/moussia/Desktop/esgi/2em année/2em semestre/projettestfonctionnel/routes/users.js">
         <metrics statements="12" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="2" count="1" type="stmt"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="4" count="1" type="stmt"/>
-        <line num="5" count="1" type="stmt"/>
-        <line num="6" count="1" type="stmt"/>
-        <line num="8" count="1" type="stmt"/>
-        <line num="10" count="1" type="stmt"/>
-        <line num="11" count="1" type="stmt"/>
-        <line num="12" count="1" type="stmt"/>
-        <line num="13" count="1" type="stmt"/>
-        <line num="15" count="1" type="stmt"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="2" count="3" type="stmt"/>
+        <line num="3" count="3" type="stmt"/>
+        <line num="4" count="3" type="stmt"/>
+        <line num="5" count="3" type="stmt"/>
+        <line num="6" count="3" type="stmt"/>
+        <line num="8" count="3" type="stmt"/>
+        <line num="10" count="3" type="stmt"/>
+        <line num="11" count="3" type="stmt"/>
+        <line num="12" count="3" type="stmt"/>
+        <line num="13" count="3" type="stmt"/>
+        <line num="15" count="3" type="stmt"/>
       </file>
       <file name="wishlists.js" path="/Users/moussia/Desktop/esgi/2em année/2em semestre/projettestfonctionnel/routes/wishlists.js">
         <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="2" count="1" type="stmt"/>
-        <line num="10" count="1" type="stmt"/>
-        <line num="12" count="1" type="stmt"/>
-        <line num="14" count="1" type="stmt"/>
-        <line num="16" count="1" type="stmt"/>
-        <line num="18" count="1" type="stmt"/>
-        <line num="20" count="1" type="stmt"/>
-        <line num="22" count="1" type="stmt"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="2" count="3" type="stmt"/>
+        <line num="10" count="3" type="stmt"/>
+        <line num="12" count="3" type="stmt"/>
+        <line num="14" count="3" type="stmt"/>
+        <line num="16" count="3" type="stmt"/>
+        <line num="18" count="3" type="stmt"/>
+        <line num="20" count="3" type="stmt"/>
+        <line num="22" count="3" type="stmt"/>
       </file>
     </package>
   </project>

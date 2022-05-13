@@ -33,7 +33,8 @@ const invalidFormatLogin = [
     { password: '' }, // Test invalide, Email inexistant et Mot de passe vide
     { email: 'admin@gmail.com', password: '' }, // Test Admin, Mot de passe vide
     { email: '', password: 'dedddfvr' }, // Test Admin, Email inexistant et Mot de passe Invalide
-    { email: 'admingmail.com', password: 'ertrt' } // Test Admin, Email mauvais format et mauvais Mot de passe
+    { email: 'admingmail.com', password: 'ertrt' }, // Test Admin, Email mauvais format et mauvais Mot de passe
+    { email: 'admin@gmail.com', password: 'aaa' }, // Test Admin, mauvais Mot de passe
 ];
 
 // Send 401 - Mauvais identifiants
