@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 
 const UserSchema = new mongoose.Schema({
+
   lastname: {
     type: String,
     required: true
@@ -18,6 +19,13 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  wishlists: [
+    {
+      type: mongoose.Types.ObjectId,
+      allowNull: true,
+      ref: "whitelist",
+    },
+  ],
 });
 const User = mongoose.model("User", UserSchema);
 

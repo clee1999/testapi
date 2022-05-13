@@ -2,8 +2,8 @@ const Item = require("../models/items.js");
 
 // GET
 const getItems = (req, res) => {
-  Item.findAll({})
-    .then((result) => res.status(200).json({ result }))
+  Item.find({})
+    .then((result) => res.status(200).json(result))
     .catch((error) => res.status(500).json({ msg: error }));
 };
 
@@ -15,8 +15,15 @@ const getItem = (req, res) => {
 
 // POST
 const createItem = (req, res) => {
-  Item.create(req.body)
-    .then((result) => res.status(200).json({ result }))
+  response = new Item({
+    name: req.body.name,
+    price: req.body.price,
+  });
+  response
+    .save()
+    .then((result) => {
+      res.status(201).json({ result });
+    })
     .catch((error) => res.status(500).json({ msg: error }));
 };
 
@@ -26,14 +33,17 @@ const updateItem = (req, res) => {
     new: true,
     runValidators: true,
   })
-    .then((result) => res.status(200).json({ result }))
+    .then((result) => {
+      res.status(200).json(result);
+      res.send(response);
+    })
     .catch((error) => res.status(404).json({ msg: "item not found" }));
 };
 
 // DELETE
 const deleteItem = (req, res) => {
   Item.findOneAndDelete({ _id: req.params.itemID })
-    .then((result) => res.status(200).json({ result }))
+    .then((result) => res.status(200).json({}))
     .catch((error) => res.status(404).json({ msg: "item not found" }));
 };
 
