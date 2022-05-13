@@ -23,7 +23,6 @@ const createItem = (req, res) => {
     .save()
     .then((result) => {
       res.status(201).json({ result });
-      res.send(response);
     })
     .catch((error) => res.status(500).json({ msg: error }));
 };
