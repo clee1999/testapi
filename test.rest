@@ -1,23 +1,23 @@
-# Inscription user
+### Inscription user
 POST http://localhost:3000/users/create
 Content-Type: application/json
 
 {
-    "lastname" : "moussia",
-    "firstname" : "hhjn",
-    "email" : "moussiamottal@gmail.com",
+    "lastname" : "mouss",
+    "firstname" : "kejler",
+    "email" : "moussiaa@gmail.com",
     "password" : "Hayamomomo555/",
     "role" : "USER"
 }
 
-# Inscription admin
+### Inscription admin
 POST http://localhost:3000/users/create
 Content-Type: application/json
 
 {
-    "lastname" : "moussia",
-    "firstname" : "hhjn",
-    "email" : "admin@gmail.com",
+    "lastname" : "admin",
+    "firstname" : "admin",
+    "email" : "administrateur@gmail.com",
     "password" : "Hayamomomo555/",
     "role" : "ADMIN"
 }

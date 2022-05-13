@@ -45,15 +45,19 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
+
 ////// ENTITY
 app.use("/items", items_routes);
 app.use("/users", users_routes);
 app.use("/wishlists", wishlists_routes);
 app.use('/session', authRouter);
 
-
 /////////// MIDDLEWARE
 const logger = (req, res, next) => {
+  console.log(req.url);
+  console.log(req.params);
+  console.log(req.query);
+  console.log(res);
   next();
 };
 
