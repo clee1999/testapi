@@ -4,22 +4,23 @@ const mongoose = require("mongoose");
 const items_routes = require("./routes/items.js");
 const users_routes = require("./routes/users.js");
 const wishlists_routes = require("./routes/wishlists.js");
+const db = require('./conf/database.js');
+const authRouter = require('./routes/auth.js');
 
-//////// SERVER LISTEN
-// app.listen(3000, () => {
-//   console.log("server is listening on port 3000");
-// });
 require("dotenv").config();
+app.use(express.json());
+
 mongoose.connect(process.env.MONGO_URI).then(() =>
   app.listen(3000, () => {
-    console.log("server is listening on port 3000");
+    console.log("✅ server is listening on port 3000");
   })
 );
 
 ////// ENTITY
-app.use("/api/items", items_routes);
-app.use("/api/users", users_routes);
-app.use("/api/wishlists", wishlists_routes);
+app.use("/items", items_routes);
+app.use("/users", users_routes);
+app.use("/wishlists", wishlists_routes);
+app.use('/session', authRouter);
 
 /////////// MIDDLEWARE
 const logger = (req, res, next) => {
