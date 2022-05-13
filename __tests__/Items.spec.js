@@ -63,7 +63,12 @@ describe("GET: /:id route to get data Items Api", () => {
   afterAll(async () => await db.close());
 
   it("should return all items", async () => {
-    const response = await client.get("/api/items");
-    expect(response.status).toBe(200);
+    const response = await client.get("/api/items/1")
+    .then((response)=>{
+      expect(response.statusCode).to.equal(200);
+      expect(response.body).to.include(insertedData)
+      done()
+  })
+  .catch((err) => done(err)
   });
 });
