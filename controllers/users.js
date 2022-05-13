@@ -57,15 +57,15 @@ const deleteUser = (req, res) => {
     .catch((error) => res.status(404).json({ msg: "user not found" }));
 };
 
-const getUser = (req, res) => {
-  User.findOne({ _id: req.params.userID })
-    .then((result) => res.status(200).json({ result }))
-    .catch(() => res.status(404).json({ msg: "user not found" }));
-};
+// const getUser = (req, res) => {
+//   User.findOne({ _id: req.params.userID })
+//     .then((result) => res.status(200).json({ result }))
+//     .catch(() => res.status(404).json({ msg: "user not found" }));
+// };
 
 module.exports = {
   getUsers,
-  getUser,
+  // getUser,
   createUser,
   updateUser,
   deleteUser,
