@@ -8,6 +8,7 @@ const wishlists_routes = require("./routes/wishlists.js");
 const db = require("./conf/database.js");
 const authRouter = require("./routes/auth.js");
 const { passportInit } = require("./conf/passport.js");
+const app = express();
 
 require("dotenv").config();
 app.use(express.json());
@@ -49,10 +50,10 @@ app.use("/session", authRouter);
 module.exports = app;
 /////////// MIDDLEWARE
 const logger = (req, res, next) => {
-  console.log(req.url);
-  console.log(req.params);
-  console.log(req.query);
-  console.log(res);
+  // console.log(req.url);
+  // console.log(req.params);
+  // console.log(req.query);
+  // console.log(res);
   next();
 };
 

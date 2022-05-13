@@ -25,7 +25,7 @@ const createUser = async (req, res) => {
     res.send("Inscription fait");
   }
   catch (err) {
-    console.log(err);
+    // console.log(err);
     res.status(400).send("Email deja existant");
   }
 }

@@ -1,5 +1,5 @@
 const supertest = require("supertest");
-const db = require("./db");
+const db = require("../__tests__/db");
 const client = supertest(require("../app.js"));
 
 describe("test wishlist Api", () => {

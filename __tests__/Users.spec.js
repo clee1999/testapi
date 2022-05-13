@@ -47,9 +47,8 @@ describe('Users routes', () => {
         await db.connect();
     });
     beforeEach(async () => {
-        await db.connect();
-        await request(app).post('/users/create').send(user);
-        await request(app).post('/users/create').send(admin);
+        await request(app).post('/api/users/create').send(user);
+        await request(app).post('/api/users/create').send(admin);
     });
     afterEach(async () => await db.clear());
     afterAll(async () => await db.close());
