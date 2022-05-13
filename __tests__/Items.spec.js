@@ -4,6 +4,9 @@ const db = require("./db");
 const { ObjectId } = require("bson");
 const client = supertest(require("../app.js"));
 const mongoose = require("mongoose");
+const request = require("supertest");
+const { app } = require("../app");
+process.env.NODE_ENV = "test";
 
 describe("test Items Api", () => {
   const insertedData = {
@@ -22,11 +25,11 @@ describe("test Items Api", () => {
   afterAll(async () => await db.close());
 
   it("should return all items", async () => {
-    const response = await client.get("/items");
+    const response = await request(app).get("/api/items");
     expect(response.status).toBe(200);
   });
   it("should be able to create a item and receive good code", async () => {
-    const response = await client.post("/items").send({
+    const response = await request(app).post("/api/items").send({
       name: "Test item",
       price: 4,
     });
@@ -34,7 +37,7 @@ describe("test Items Api", () => {
     expect(response.status).toBe(201);
   });
   it("should create a new item with good propeties", async () => {
-    const response = await client
+    const response = await request(app)
       .post("/api/items")
       .set("Content-Type", "application/json")
       .send({
@@ -46,8 +49,8 @@ describe("test Items Api", () => {
     expect(response.body.result.price).toBe(4);
   });
   it("should not create a new item with missing price", async () => {
-    const response = await client
-      .post("/items")
+    const response = await request(app)
+      .post("/api/items")
       .set("Content-Type", "application/json")
       .send({
         name: "Test item",
@@ -55,14 +58,14 @@ describe("test Items Api", () => {
     expect(response.status).toBe(500);
   });
   it("should not create a new item with empty values", async () => {
-    const response = await client
-      .post("/items")
+    const response = await request(app)
+      .post("/api/items")
       .set("Content-Type", "application/json")
       .send({});
     expect(response.status).toBe(500);
   });
   it("should modify item", async () => {
-    const response = await client
+    const response = await request(app)
       .put("/api/items/0000000395bf3574aff700dc")
       .set("Content-Type", "application/json")
       .send({
@@ -74,7 +77,7 @@ describe("test Items Api", () => {
   });
 
   it("should get:id", async () => {
-    const response = await client
+    const response = await request(app)
       .get("/api/items/0000000395bf3574aff700dc")
       .set("Content-Type", "application/json");
 
@@ -83,23 +86,25 @@ describe("test Items Api", () => {
   });
 
   it("should return error if get invalid id", async () => {
-    const response = await client.get("/api/items/string");
+    const response = await request(app).get("/api/items/string");
     expect(response.status).toBe(404);
   });
 
   it("should return get response 200", async () => {
-    const response = await client.get("/api/items/627e135500bae649f538558e");
+    const response = await request(app).get(
+      "/api/items/627e135500bae649f538558e"
+    );
     expect(response.status).toBe(200);
   });
 
   it("should return status error and error message if get invalid id", async () => {
-    const response = await client.get("/api/items/string");
+    const response = await request(app).get("/api/items/string");
     expect(response.status).toBe(404);
     expect(response.body).toStrictEqual({ msg: "item not found" });
   });
 
   it("should delete item", async () => {
-    const response = await client
+    const response = await request(app)
       .delete("/api/items/0000000395bf3574aff700dc")
       .set("Content-Type", "application/json");
     expect(response.status).toBe(200);
@@ -107,7 +112,7 @@ describe("test Items Api", () => {
   });
 
   it("should not delete item if no existing", async () => {
-    const response = await client
+    const response = await request(app)
       .delete("/api/items/string")
       .set("Content-Type", "application/json");
     expect(response.status).toBe(404);

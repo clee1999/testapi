@@ -5,6 +5,10 @@ const mongoose = require("mongoose");
 const { ObjectId } = require("bson");
 const Item = require("../models/items");
 const Wishlist = require("../models/wishlists");
+process.env.NODE_ENV = "test";
+
+const request = require("supertest");
+const { app } = require("../app");
 
 describe("test wishlist Api", () => {
   const itemMock = {
@@ -31,11 +35,11 @@ describe("test wishlist Api", () => {
   afterEach(async () => await db.clear());
   afterAll(async () => await db.close());
   it("it should return all wishlists", async () => {
-    const response = await client.get("/api/wishlists");
+    const response = await request(app).get("/api/wishlists");
     expect(response.status).toBe(200);
   });
   it("should create a return code 200", async () => {
-    const response = await client
+    const response = await request(app)
       .post("/api/wishlists")
       .set("Content-Type", "application/json")
       .send({
@@ -47,7 +51,7 @@ describe("test wishlist Api", () => {
   it("should create a new wishlist", async () => {
     let objectId = new ObjectId("0000000395bf3574aff700dc");
     const item = { _id: objectId, name: "testitem", price: 4 };
-    const response = await client
+    const response = await request(app)
       .post("/api/wishlists")
       .set("Content-Type", "application/json")
       .send({
@@ -63,7 +67,7 @@ describe("test wishlist Api", () => {
   });
 
   it("should not create a new wishlist if missing wishlist", async () => {
-    const response = await client
+    const response = await request(app)
       .post("/api/wishlists")
       .set("Content-Type", "application/json")
       .send({});
@@ -74,7 +78,7 @@ describe("test wishlist Api", () => {
   it("should modify wishlist", async () => {
     let objectId = new ObjectId("0000000395bf3574aff700dc");
     const item = { _id: objectId, name: "testitem", price: 4 };
-    const response = await client
+    const response = await request(app)
       .put("/api/wishlists/0000000395bf3574aff700df")
       .set("Content-Type", "application/json")
       .send({
@@ -85,7 +89,7 @@ describe("test wishlist Api", () => {
     expect(response.body.result.name).toBe("Wish");
   });
   it("should get:id", async () => {
-    const response = await client
+    const response = await request(app)
       .get("/api/wishlists/0000000395bf3574aff700df")
       .set("Content-Type", "application/json");
 
@@ -93,16 +97,16 @@ describe("test wishlist Api", () => {
     expect(response.body.result.items[0]).toBe("0000000395bf3574aff700dc");
   });
   it("should return error if get invalid id", async () => {
-    const response = await client.get("/api/wishlists/string");
+    const response = await request(app).get("/api/wishlists/string");
     expect(response.status).toBe(404);
   });
   it("should return status error and error message if get invalid id", async () => {
-    const response = await client.get("/api/wishlists/string");
+    const response = await request(app).get("/api/wishlists/string");
     expect(response.status).toBe(404);
     expect(response.body).toStrictEqual({ msg: "wishlist not found" });
   });
   it("should delete wishlist", async () => {
-    const response = await client
+    const response = await request(app)
       .delete("/api/items/0000000395bf3574aff700df")
       .set("Content-Type", "application/json");
     expect(response.status).toBe(200);
