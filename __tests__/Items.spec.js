@@ -1,7 +1,7 @@
 const supertest = require("supertest");
+const Item = require("../models/items");
 const db = require("./db");
 const client = supertest(require("../app.js"));
-const app = require("../app.js");
 
 describe("test Items Api", () => {
   beforeAll(async () => await db.connect());
@@ -32,7 +32,7 @@ describe("test Items Api", () => {
     expect(response.body.result.name).toBe("Test item");
     expect(response.body.result.price).toBe(4);
   });
-  it("should not create a new item with bad propeties", async () => {
+  it("should not create a new item with missing price", async () => {
     const response = await client
       .post("/api/items")
       .set("Content-Type", "application/json")
@@ -40,5 +40,30 @@ describe("test Items Api", () => {
         name: "Test item",
       });
     expect(response.status).toBe(500);
+  });
+  it("should not create a new item with empty values", async () => {
+    const response = await client
+      .post("/api/items")
+      .set("Content-Type", "application/json")
+      .send({});
+    expect(response.status).toBe(500);
+  });
+});
+
+describe("GET: /:id route to get data Items Api", () => {
+  let insertedData = { _id: 1, name: "Poudre", price: 5 };
+  beforeEach((done) => {
+    new Item(insertedData)
+      .save()
+      .then(() => done())
+      .catch((err) => done(err));
+  });
+  beforeAll(async () => await db.connect());
+  afterEach(async () => await db.clear());
+  afterAll(async () => await db.close());
+
+  it("should return all items", async () => {
+    const response = await client.get("/api/items");
+    expect(response.status).toBe(200);
   });
 });
