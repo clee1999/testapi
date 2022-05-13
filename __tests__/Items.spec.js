@@ -1,10 +1,22 @@
 const supertest = require("supertest");
 const Item = require("../models/items");
 const db = require("./db");
-const { app } = require('../app');
-const client = supertest(app);
+const { ObjectId } = require("bson");
+const client = supertest(require("../app.js"));
+const mongoose = require("mongoose");
 
 describe("test Items Api", () => {
+  const insertedData = {
+    _id: new ObjectId("0000000395bf3574aff700dc"),
+    name: "Poudre",
+    price: 5,
+  };
+  beforeEach((done) => {
+    new Item(insertedData)
+      .save()
+      .then(() => done())
+      .catch((err) => done(err));
+  });
   beforeAll(async () => await db.connect());
   afterEach(async () => await db.clear());
   afterAll(async () => await db.close());
@@ -49,27 +61,56 @@ describe("test Items Api", () => {
       .send({});
     expect(response.status).toBe(500);
   });
-});
-
-describe("GET: /:id route to get data Items Api", () => {
-  let insertedData = { _id: 1, name: "Poudre", price: 5 };
-  beforeEach((done) => {
-    new Item(insertedData)
-      .save()
-      .then(() => done())
-      .catch((err) => done(err));
+  it("should modify item", async () => {
+    const response = await client
+      .put("/api/items/0000000395bf3574aff700dc")
+      .set("Content-Type", "application/json")
+      .send({
+        name: "Test item",
+        price: 4,
+      });
+    expect(response.body.name).toBe("Test item");
+    expect(response.body.price).toBe(4);
   });
-  beforeAll(async () => await db.connect());
-  afterEach(async () => await db.clear());
-  afterAll(async () => await db.close());
 
-  it("should return all items", async () => {
-    const response = await client.get("/items/1")
-      .then((response) => {
-        expect(response.statusCode).to.equal(200);
-        expect(response.body).to.include(insertedData)
-        done()
-      })
-      .catch((err) => done(err))
+  it("should get:id", async () => {
+    const response = await client
+      .get("/api/items/0000000395bf3574aff700dc")
+      .set("Content-Type", "application/json");
+
+    expect(response.body.result.name).toBe("Poudre");
+    expect(response.body.result.price).toBe(5);
+  });
+
+  it("should return error if get invalid id", async () => {
+    const response = await client.get("/api/items/string");
+    expect(response.status).toBe(404);
+  });
+
+  it("should return get response 200", async () => {
+    const response = await client.get("/api/items/627e135500bae649f538558e");
+    expect(response.status).toBe(200);
+  });
+
+  it("should return status error and error message if get invalid id", async () => {
+    const response = await client.get("/api/items/string");
+    expect(response.status).toBe(404);
+    expect(response.body).toStrictEqual({ msg: "item not found" });
+  });
+
+  it("should delete item", async () => {
+    const response = await client
+      .delete("/api/items/0000000395bf3574aff700dc")
+      .set("Content-Type", "application/json");
+    expect(response.status).toBe(200);
+    expect(response.body.name).toBeUndefined;
+  });
+
+  it("should not delete item if no existing", async () => {
+    const response = await client
+      .delete("/api/items/string")
+      .set("Content-Type", "application/json");
+    expect(response.status).toBe(404);
+    expect(response.body).toStrictEqual({ msg: "item not found" });
   });
 });

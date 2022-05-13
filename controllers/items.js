@@ -35,7 +35,6 @@ const updateItem = (req, res) => {
   })
     .then((result) => {
       res.status(200).json(result);
-      res.send(response);
     })
     .catch((error) => res.status(404).json({ msg: "item not found" }));
 };
