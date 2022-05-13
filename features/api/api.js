@@ -4,6 +4,7 @@ const supertest = require("supertest");
 const app = require("../../app");
 const client = supertest(app);
 const { expect } = require("expect");
+const ReferenceManager = require("../../fixtures/ReferenceManager");
 
 function interpolateString(str) {
   return str.replace(/\{\{\s*([^}]+)\s*\}\}/g, (match, name) => {
@@ -28,6 +29,7 @@ Given("I have a payload", function (dataTable) {
 
 Given("I have an item", function (dataTable) {
   this.payload = interpolate(dataTable.rowsHash());
+
 });
 
 Given("I am authenticated as {string}", function (string) {
@@ -49,6 +51,7 @@ When("I request {string} {string} with payload", async function (method, path) {
   );
   this.response = await this.request.send(this.payload);
 });
+
 When(
   "I request {string} {string} without payload",
   async function (method, path) {
@@ -59,6 +62,7 @@ When(
     this.response = await this.request.send(this.payload);
   }
 );
+
 
 Then("the response code should be {int}", function (int) {
   // Write code here that turns the phrase above into concrete actions
@@ -84,7 +88,9 @@ Then(
   "I should receive an element with the following attributes",
   function (dataTable) {
     const expected = interpolate(dataTable.rowsHash());
+
     const actual = this.response.body.result;
+
     expect(typeof actual).toBe("object");
     Object.keys(expected).forEach((key) => {
       expect(actual).toHaveProperty(key, expected[key]);

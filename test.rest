@@ -1,29 +1,29 @@
 ### Inscription user
-POST http://localhost:3000/users/create
+POST http://localhost:3000/api/users/create
 Content-Type: application/json
 
 {
     "lastname" : "mouss",
     "firstname" : "kejler",
     "email" : "moussiaa@gmail.com",
-    "password" : "Hayamomomo555/",
+    "password" : "Azertyuiop5g/",
     "role" : "USER"
 }
 
 ### Inscription admin
-POST http://localhost:3000/users/create
+POST http://localhost:3000/api/users/create
 Content-Type: application/json
 
 {
     "lastname" : "admin",
     "firstname" : "admin",
     "email" : "administrateur@gmail.com",
-    "password" : "Hayamomomo555/",
+    "password" : "Azertyuiopqnj5/",
     "role" : "ADMIN"
 }
 
 ### FAUX PASS
-POST http://localhost:3000/session
+POST http://localhost:3000/api/session
 Content-Type: application/json
 
 {
@@ -32,7 +32,7 @@ Content-Type: application/json
 }
 
 ### FAUX MAIL
-POST http://localhost:3000/session
+POST http://localhost:3000/api/session
 Content-Type: application/json
 
 {
@@ -42,7 +42,7 @@ Content-Type: application/json
 
 
 ### Faux Mail et Faux mot de passe
-POST http://localhost:3000/session
+POST http://localhost:3000/api/session
 Content-Type: application/json
 
 {
@@ -51,7 +51,7 @@ Content-Type: application/json
 }
 
 ### Bonne connexion (user)
-POST http://localhost:3000/session
+POST http://localhost:3000/api/session
 Content-Type: application/json
 
 {
@@ -60,19 +60,19 @@ Content-Type: application/json
 }
 
 ### Bonne connexion (admin)
-POST http://localhost:3000/session
+POST http://localhost:3000/api/session
 Content-Type: application/json
 
 {
     "email" : "admin@gmail.com",
-    "password" : "Hayamomomo555/"
+    "password" : "Azertyuiop/"
 }
 
 ### 
-GET http://localhost:3000/users/current
+GET http://localhost:3000/api/users/current
 
 ### List all users (only available for admin)
-GET http://localhost:3000/users
+GET http://localhost:3000/api/users
 
 ### 
-DELETE http://localhost:3000/session
+DELETE http://localhost:3000/api/session

@@ -13,13 +13,19 @@ const app = express();
 require("dotenv").config();
 app.use(express.json());
 
-mongoose.connect(process.env.MONGO_URI).then(() => {
-  if (process.env.NODE_ENV !== "test") {
-    app.listen(3000, () => {
-      console.log("✅ server is listening on port 3000");
-    });
-  }
-});
+mongoose
+  .connect(
+    process.env.NODE_ENV !== "test"
+      ? process.env.MONGO_URI
+      : process.env.MONGO_TEST_URI
+  )
+  .then(() => {
+    if (process.env.NODE_ENV !== "test") {
+      app.listen(3000, () => {
+        console.log("✅ server is listening on port 3000");
+      });
+    }
+  });
 
 passportInit(passport);
 
@@ -46,13 +52,13 @@ app.use("/api/users", users_routes);
 app.use("/api/wishlists", wishlists_routes);
 app.use("/session", authRouter);
 
-module.exports = app;
+module.exports = { app };
 /////////// MIDDLEWARE
 const logger = (req, res, next) => {
-  console.log(req.url);
-  console.log(req.params);
-  console.log(req.query);
-  console.log(res);
+  // console.log(req.url);
+  // console.log(req.params);
+  // console.log(req.query);
+  // console.log(res);
   next();
 };
 

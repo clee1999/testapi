@@ -25,18 +25,16 @@ const createUser = async (req, res) => {
     res.send("Inscription fait");
   }
   catch (err) {
-    console.log(err);
+    // console.log(err);
     res.status(400).send("Email deja existant");
   }
 }
 
 const currentUser = async (req, res) => {
-  console.log(res.user);
   res.send(req.user);
 }
 
 const updateUser = async (req, res) => {
-  console.log('body', req.body);
   const updatedUser = await User.findOneAndUpdate({ _id: req.user._id }, req.body);
   res.send(updatedUser);
 }

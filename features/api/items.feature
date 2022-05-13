@@ -37,6 +37,7 @@ Feature: Item API
 #     Then I should receive an element with the following attributes
 #         | name | {{knife1.name}} |
 
+
 # Scenario: Update a product
 #     Given I load fixtures "user.json,product.json"
 #     And I am authenticated as "admin"
