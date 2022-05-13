@@ -1,0 +1,5 @@
+v
+
+module.exports = {
+    isAuthenticated
+};

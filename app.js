@@ -1,4 +1,15 @@
 const express = require("express");
+<<<<<<< HEAD
+=======
+const app = express();
+const bodyParser = require("body-parser");
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }));
+
+// parse application/json
+app.use(bodyParser.json());
+
+>>>>>>> f1baf9b143a36ca8a400182b83f22dc9bf9d8e9b
 const mongoose = require("mongoose");
 const passport = require('passport');
 const session = require('express-session');
@@ -42,9 +53,12 @@ app.use(
   })
 );
 
+<<<<<<< HEAD
 app.use(passport.initialize());
 app.use(passport.session());
 
+=======
+>>>>>>> f1baf9b143a36ca8a400182b83f22dc9bf9d8e9b
 
 ////// ENTITY
 app.use("/items", items_routes);
@@ -52,12 +66,9 @@ app.use("/users", users_routes);
 app.use("/wishlists", wishlists_routes);
 app.use('/session', authRouter);
 
+
 /////////// MIDDLEWARE
 const logger = (req, res, next) => {
-  console.log(req.url);
-  console.log(req.params);
-  console.log(req.query);
-  console.log(res);
   next();
 };
 
@@ -66,5 +77,12 @@ app.use(logger); // execute your middleware for all requests
 app.get("/about", (req, res) => {
   return res.send("About Page");
 });
+<<<<<<< HEAD
 
 module.exports = { app }
+=======
+////// ENTITY
+app.use("/api/items", items_routes);
+app.use("/api/users", users_routes);
+app.use("/api/wishlists", wishlists_routes);
+>>>>>>> f1baf9b143a36ca8a400182b83f22dc9bf9d8e9b

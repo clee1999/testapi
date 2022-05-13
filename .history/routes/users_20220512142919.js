@@ -1,0 +1,18 @@
+const express = require("express");
+const router = express.Router();
+const { createParent, currentUser, updateUser }  require('../controller/user.js';
+import { isAuthenticated } from '../middleware/isAuthenticated.js';
+import { ValidateParentSignup } from '../middleware/Validators/SignUp.js';
+
+const userRouter = express();
+
+userRouter.post('/create', ValidateParentSignup, createParent);
+userRouter.get('/current', isAuthenticated, currentUser);
+// router.get("/", getUsers);
+// router.get("/:userID", getUser);
+// router.post("/", createUser);
+// router.put("/:userID", updateUser);
+// router.delete("/:userID", deleteUser);
+
+
+export default userRouter;
