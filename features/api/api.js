@@ -27,6 +27,11 @@ Given("I have a payload", function (dataTable) {
   this.payload = interpolate(dataTable.rowsHash());
 });
 
+Given("I have an item", function (dataTable) {
+  this.payload = interpolate(dataTable.rowsHash());
+
+});
+
 Given("I am authenticated as {string}", function (string) {
   const user = ReferenceManager.getReference(string);
   // user => token
@@ -46,6 +51,18 @@ When("I request {string} {string} with payload", async function (method, path) {
   );
   this.response = await this.request.send(this.payload);
 });
+
+When(
+  "I request {string} {string} without payload",
+  async function (method, path) {
+    this.request = client[method.toLowerCase()](interpolateString(path)).set(
+      "Content-Type",
+      "application/json"
+    );
+    this.response = await this.request.send(this.payload);
+  }
+);
+
 
 Then("the response code should be {int}", function (int) {
   // Write code here that turns the phrase above into concrete actions
@@ -71,7 +88,9 @@ Then(
   "I should receive an element with the following attributes",
   function (dataTable) {
     const expected = interpolate(dataTable.rowsHash());
-    const actual = this.response.body;
+
+    const actual = this.response.body.result;
+
     expect(typeof actual).toBe("object");
     Object.keys(expected).forEach((key) => {
       expect(actual).toHaveProperty(key, expected[key]);
