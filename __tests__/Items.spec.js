@@ -1,6 +1,6 @@
 const supertest = require("supertest");
 const Item = require("../models/items");
-const db = require("../__tests__/db");
+const db = require("./db");
 const { ObjectId } = require("bson");
 const client = supertest(require("../app.js"));
 const mongoose = require("mongoose");
