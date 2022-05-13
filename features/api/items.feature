@@ -16,11 +16,11 @@ Feature: Product API
         And I should receive an element with the following attributes
             | name | "Product 1" |
 
-# Scenario: Get a product
-#     Given I load fixtures "product.json"
-#     When I request "GET" "/products/{{knife2.id}}"
-#     Then I should receive an element with the following attributes
-#         | name | {{knife1.name}} |
+Scenario: Get a item
+    Given I load fixtures "items.json"
+    When I request "GET" "api/items/{{knife2.id}}"
+    Then I should receive an element with the following attributes
+        | name | {{knife1.name}} |
 
 # Scenario: Update a product
 #     Given I load fixtures "user.json,product.json"
