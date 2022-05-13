@@ -1,11 +1,8 @@
 const User = require("../models/users.js");
 const bcrypt = require("bcrypt");
-const jwt = require('jsonwebtoken');
 
-const login = async (req, res) => {
-    const { email, password } = req.body;
-
-    console.log(email, password);
+const Login = async (email, password, done) => {
+    console.log(email, password)
     const user = await User.findOne({ email });
     if (!user) {
         console.log('❌ Le login n existe pas');
@@ -13,14 +10,21 @@ const login = async (req, res) => {
     }
     const isValid = await bcrypt.compare(password, user.password);
     if (!isValid) {
-        console.log('login failed');
-        return res.sendStatus(401);
+        return done(null, false);
     }
     console.log('✅ Connexion');
-    res.json(jwt.sign({ user: user._id }, process.env.JWT_SECRET, { expiresIn: '1h' }));
+    return done(null, user)
+}
+
+const Logout = async (req, res) => {
+    if (req.user) {
+        req.logOut();
+    }
+    console.log('✅ Deconnexion');
+    res.send(200);
 }
 
 module.exports = {
-    login
+    Login,
+    Logout
 };
-
