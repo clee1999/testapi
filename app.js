@@ -8,6 +8,7 @@ const wishlists_routes = require("./routes/wishlists.js");
 const db = require("./conf/database.js");
 const authRouter = require("./routes/auth.js");
 const { passportInit } = require("./conf/passport.js");
+const app = express();
 
 require("dotenv").config();
 app.use(express.json());
@@ -38,7 +39,6 @@ app.use(
 
 app.use(passport.initialize());
 app.use(passport.session());
-
 
 ////// ENTITY
 app.use("/api/items", items_routes);
