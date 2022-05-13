@@ -1,5 +1,0 @@
-v
-
-module.exports = {
-    isAuthenticated
-};

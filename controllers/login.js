@@ -28,12 +28,3 @@ module.exports = {
     Login,
     Logout
 };
-
-// user connecter :
-// - appeler login 
-// renvoi 200 ou 401?
-// test 200 et test 401
-// mauvais login ?
-// bon login ?
-// mauvaise valeur ?
-

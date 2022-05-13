@@ -1,26 +1,21 @@
-const express = require("express");
-<<<<<<< HEAD
-=======
-const app = express();
-const bodyParser = require("body-parser");
-// parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: false }));
-
-// parse application/json
-app.use(bodyParser.json());
-
->>>>>>> f1baf9b143a36ca8a400182b83f22dc9bf9d8e9b
 const mongoose = require("mongoose");
 const passport = require('passport');
-const session = require('express-session');
 const items_routes = require("./routes/items.js");
 const users_routes = require("./routes/users.js");
 const wishlists_routes = require("./routes/wishlists.js");
 const db = require('./conf/database.js');
 const authRouter = require('./routes/auth.js');
 const { passportInit } = require('./conf/passport.js');
+const session = require('express-session');
+const express = require("express");
+const bodyParser = require("body-parser");
 
 
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }));
+
+// parse application/json
+app.use(bodyParser.json());
 
 const app = express();
 
@@ -53,12 +48,8 @@ app.use(
   })
 );
 
-<<<<<<< HEAD
 app.use(passport.initialize());
 app.use(passport.session());
-
-=======
->>>>>>> f1baf9b143a36ca8a400182b83f22dc9bf9d8e9b
 
 ////// ENTITY
 app.use("/items", items_routes);
@@ -77,12 +68,5 @@ app.use(logger); // execute your middleware for all requests
 app.get("/about", (req, res) => {
   return res.send("About Page");
 });
-<<<<<<< HEAD
 
 module.exports = { app }
-=======
-////// ENTITY
-app.use("/api/items", items_routes);
-app.use("/api/users", users_routes);
-app.use("/api/wishlists", wishlists_routes);
->>>>>>> f1baf9b143a36ca8a400182b83f22dc9bf9d8e9b
