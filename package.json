@@ -4,13 +4,20 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --coverage"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ]
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.0.1",
     "express-validator": "^6.14.0",
+    "jest": "^28.1.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.3.3",
     "passport": "^0.5.2",
@@ -21,8 +28,10 @@
     "body-parser": "^1.20.0",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
-    "jest": "^28.1.0",
     "mongodb-memory-server": "^8.5.2",
     "supertest": "^6.2.3"
+  },
+  "devDependencies": {
+    "@types/supertest": "^2.0.12"
   }
 }

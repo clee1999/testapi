@@ -1,5 +1,6 @@
 const { strings } = require("../../constants/Strings");
 const { body, validationResult } = require("express-validator");
+const { roles } = require("../../constants/Roles");
 
 const ValidateSignup = [
     body('email')
@@ -37,16 +38,26 @@ const ValidateSignup = [
         .withMessage(strings.VALIDATE_EMPTY_LASTNAME)
         .trim()
         .escape(),
+    body('role')
+        .exists()
+        .withMessage(strings.VALIDATE_LASTNAME_NEEDED)
+        .notEmpty()
+        .withMessage(strings.VALIDATE_EMPTY_LASTNAME)
+        .trim()
+        .isIn([roles.USER, roles.ADMIN])
+        .withMessage(strings.VALIDATE_EMPTY_LASTNAME)
+        .escape(),
     (req, res, next) => {
         try {
             myValidationResult(req).throw();
-            const { email, password, lastname, firstname } = req.body;
+            const { email, password, lastname, firstname, role } = req.body;
 
             req.body = {
                 email,
                 password,
                 lastname,
-                firstname
+                firstname,
+                role
             };
             next();
         } catch (err) {
