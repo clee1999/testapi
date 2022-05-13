@@ -28,6 +28,10 @@ Given("I have a payload", function (dataTable) {
     this.payload = interpolate(dataTable.rowsHash());
 });
 
+Given("I have an item", function (dataTable) {
+    this.payload = interpolate(dataTable.rowsHash());
+});
+
 Given("I am authenticated as {string}", function (string) {
     const user = ReferenceManager.getReference(string);
     // user => token
@@ -72,7 +76,7 @@ Then(
     "I should receive an element with the following attributes",
     function (dataTable) {
         const expected = interpolate(dataTable.rowsHash());
-        const actual = this.response.body;
+        const actual = this.response.body.result;
         expect(typeof actual).toBe("object");
         Object.keys(expected).forEach((key) => {
             expect(actual).toHaveProperty(key, expected[key]);
