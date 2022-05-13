@@ -16,7 +16,7 @@ const app = express();
 require("dotenv").config();
 app.use(express.json());
 
-mongoose.connect(process.env.MONGO_URI).then(() => {
+mongoose.connect(process.env.NODE_ENV !== 'test' ? process.env.MONGO_URI : process.env.MONGO_TEST_URI).then(() => {
   if (process.env.NODE_ENV !== 'test') {
     app.listen(3000, () => {
       console.log("✅ server is listening on port 3000");

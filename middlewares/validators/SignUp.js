@@ -61,7 +61,6 @@ const ValidateSignup = [
             };
             next();
         } catch (err) {
-            console.log(err.mapped());
             res.status(400).json({ message: err.mapped() }).send();
         }
     }

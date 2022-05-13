@@ -1,7 +1,8 @@
 const supertest = require("supertest");
 const Item = require("../models/items");
 const db = require("./db");
-const client = supertest(require("../app.js"));
+const { app } = require('../app');
+const client = supertest(app);
 
 describe("test Items Api", () => {
   beforeAll(async () => await db.connect());
@@ -9,11 +10,11 @@ describe("test Items Api", () => {
   afterAll(async () => await db.close());
 
   it("should return all items", async () => {
-    const response = await client.get("/api/items");
+    const response = await client.get("/items");
     expect(response.status).toBe(200);
   });
   it("should be able to create a item and receive good code", async () => {
-    const response = await client.post("/api/items").send({
+    const response = await client.post("/items").send({
       name: "Test item",
       price: 4,
     });
@@ -34,7 +35,7 @@ describe("test Items Api", () => {
   });
   it("should not create a new item with missing price", async () => {
     const response = await client
-      .post("/api/items")
+      .post("/items")
       .set("Content-Type", "application/json")
       .send({
         name: "Test item",
@@ -43,7 +44,7 @@ describe("test Items Api", () => {
   });
   it("should not create a new item with empty values", async () => {
     const response = await client
-      .post("/api/items")
+      .post("/items")
       .set("Content-Type", "application/json")
       .send({});
     expect(response.status).toBe(500);
@@ -63,12 +64,12 @@ describe("GET: /:id route to get data Items Api", () => {
   afterAll(async () => await db.close());
 
   it("should return all items", async () => {
-    const response = await client.get("/api/items/1")
-    .then((response)=>{
-      expect(response.statusCode).to.equal(200);
-      expect(response.body).to.include(insertedData)
-      done()
-  })
-  .catch((err) => done(err)
+    const response = await client.get("/items/1")
+      .then((response) => {
+        expect(response.statusCode).to.equal(200);
+        expect(response.body).to.include(insertedData)
+        done()
+      })
+      .catch((err) => done(err))
   });
 });
